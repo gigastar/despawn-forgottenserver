@@ -59,6 +59,7 @@ class ConfigManager
 			CLEAN_PROTECTION_ZONES,
 			HOUSE_DOOR_SHOW_PRICE,
 			ONLY_INVITED_CAN_MOVE_HOUSE_ITEMS,
+			DEFAULT_DESPAWNACTION,
 
 			LAST_BOOLEAN_CONFIG /* this must be the last one */
 		};
