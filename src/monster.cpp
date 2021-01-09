@@ -719,7 +719,12 @@ void Monster::onThink(uint32_t interval)
 	}
 
 	if (!isInSpawnRange(position)) {
-		g_game.internalTeleport(this, masterPos);
+		bool removeMonster = g_config.getNumber(ConfigManager::DEFAULT_DESPAWNACTION);
+		if (removeMonster) {
+			g_game.removeCreature(this, false);
+		} else {
+			g_game.internalTeleport(this, masterPos);
+		}
 		setIdle(true);
 	} else {
 		updateIdleStatus();
